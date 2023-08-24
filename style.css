@@ -1,0 +1,144 @@
+/* universal selector */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: poppin 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#wrapper{
+    height: 100vh;
+    /* overflow-x: hidden; */
+    overflow-y: auto;
+    perspective: 10px;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    /* to generate 3d effect */
+    transform-style: preserve-3d;
+    /* for overlaying */
+    z-index: -1;
+
+}
+
+.background{
+    /* in this backgorund image is set to 40px far from the upper image using transform:translatez()
+    and to magnify the image at that place we have used scale which multiply the size  */
+    transform:translateZ(-40px) scale(5);
+}
+.foreground{
+    /*  now uncle moving with diffrent velocity as compared to background image as it is 20px far from eyesight
+    and adventure text is 0index from eyegight(10px perspective) */
+    transform:translateZ(-20px) scale(3);
+}
+
+.background ,.foreground{
+    position:absolute;
+    height: 100%;
+    width:100%;
+    /* image ek index piche chli gyi  */
+    z-index: -1;
+    object-fit: cover;
+}
+
+
+
+
+/* h1{
+    position:absolute;
+    font-size: 12rem;
+   
+    letter-spacing: 10px;
+    font-weight: 600;
+    color: rgb(5, 0, 0);
+    text-shadow: 0 0 40px rgba(0,0,0,0.3); 
+} */
+
+
+.text{
+    position: absolute;
+    font-size: 10rem;
+    color: rgb(255, 244, 244);
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    letter-spacing: 16px;
+    transform:translateZ(-30px) scale(4);
+
+}
+
+
+section{
+    background-color: rgb(45, 45, 45);
+    color: white;
+    padding: 5rem 0;
+}
+
+.sec-head{
+    font-size:5rem;
+    padding:0 10rem;
+    color:white
+}
+.text-1{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+
+}
+.text-1:hover{
+    transform: translateY(-20px);
+}
+
+.bg{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    width:100%;
+    background-attachment: fixed;
+    height:500px;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.head-2{
+    background-color: white;
+    color: black;
+    font-size:2rem;
+    padding: 20px;
+    border-radius: 50px;
+}
+
+.head-2:hover
+{
+        box-shadow: -10px -10px 10px pink,10px 10px 10px pink ;
+        /* transform:translate(5px); */
+      
+        transform: perspective(10px) translateZ(2px);
+
+   
+}
+
+
+.bg1{
+    background-image: url(parallaxPractice/sport-1.jpg);
+    
+}
+
+.bg2{
+    background-image: url(parallaxPractice/sport-2.jpg);
+    object-fit: cover   ;
+    width: 100%;
+}
+
+.bg3{
+    background-image: url(parallaxPractice/sport-3.jpg);
+    object-fit: cover ;
+}
